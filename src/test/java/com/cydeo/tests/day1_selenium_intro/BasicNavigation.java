@@ -18,6 +18,9 @@ public class BasicNavigation {
         //3- Test if the driver is working as expected
         driver.get("https://www.tesla.com");
 
+        // get the title of the page
+        String currentTitle = driver.getTitle();
+
         // Stop code execution for 3 seconds
         Thread.sleep(3000);
 
@@ -35,6 +38,18 @@ public class BasicNavigation {
 
         // Use selenium to navigate refresh
         driver.navigate().refresh();
+
+        // Stop code execution for 3 seconds
+        Thread.sleep(3000);
+
+        // use navigate().to()
+        driver.navigate().to("https://www.google.com");
+
+        //get the title of the page
+        //System.out.println("driver.getTitle() = " + driver.getTitle());
+        //String currentTitle = driver.getTitle(); //If we remove from here under driver.get("https://www.tesla.com");
+        // then current title will be "tesla", otherwise "google"
+        System.out.println("currentTitle = " + currentTitle);
 
 
     }
