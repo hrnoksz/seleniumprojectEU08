@@ -32,8 +32,13 @@ public class Task1_YahooTitleVerification {
             System.out.println("Title is NOT as expected. Verification FAILED!");
         }
 
-
-
     }
 
 }
+/*
+TC #1: Yahoo Title Verification
+1.Open Chrome browser
+2.Go to https://www.yahoo.com
+3.Verify title:
+Expected: Yahoo
+ */
