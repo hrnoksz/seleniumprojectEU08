@@ -45,6 +45,8 @@ public class BasicNavigation {
         // use navigate().to()
         driver.navigate().to("https://www.google.com");
 
+        currentTitle = driver.getTitle();
+
         //get the title of the page
         //System.out.println("driver.getTitle() = " + driver.getTitle());
         //String currentTitle = driver.getTitle(); //If we remove from here under driver.get("https://www.tesla.com");
