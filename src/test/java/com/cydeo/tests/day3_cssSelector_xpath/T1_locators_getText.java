@@ -1,7 +1,9 @@
 package com.cydeo.tests.day3_cssSelector_xpath;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T1_locators_getText {
@@ -18,11 +20,19 @@ public class T1_locators_getText {
         driver.get("https://login1.nextbasecrm.com/");
 
         //3- Enter incorrect username: “incorrect”
+        WebElement usernameInput = driver.findElement(By.className("login-inp"));
+        usernameInput.sendKeys("incorrect");
+
         //4- Enter incorrect password: “incorrect”
         //To auto generate local variable
         //Mac: option + enter
         //Windows: alt + enter
+        WebElement passwordInput = driver.findElement(By.className("login-inp"));
+        passwordInput.sendKeys("incorrect");
+
         //5- Click to log in button.
+        WebElement signInButton = driver.findElement(By.className("login-btn"));
+        signInButton.click();
         //6- Verify error message text is as expected:
         //Expected: Incorrect login or password
 
