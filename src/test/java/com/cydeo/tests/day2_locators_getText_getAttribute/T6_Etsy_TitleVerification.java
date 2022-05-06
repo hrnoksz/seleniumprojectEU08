@@ -33,5 +33,6 @@ public class T6_Etsy_TitleVerification {
         }else{
             System.out.println("Title verification is failed");
         }
+
     }
 }
