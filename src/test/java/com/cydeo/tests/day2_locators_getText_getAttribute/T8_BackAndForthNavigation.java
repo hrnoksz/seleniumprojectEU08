@@ -15,7 +15,11 @@ public class T8_BackAndForthNavigation {
         driver.manage().window().maximize();
 
         //2- Go to: https://google.com
+        driver.get("https://google.com");
+
         //3- Click to Gmail from top right.
+
+
         //4- Verify title contains:
         //Expected: Gmail
         //5- Go back to Google by using the .back();
