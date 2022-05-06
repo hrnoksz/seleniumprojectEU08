@@ -20,21 +20,35 @@ public class T1_locators_getText {
         driver.get("https://login1.nextbasecrm.com/");
 
         //3- Enter incorrect username: “incorrect”
-        WebElement usernameInput = driver.findElement(By.className("login-inp"));
-        usernameInput.sendKeys("incorrect");
+        final WebElement inputUsername = driver.findElement(By.className("login-inp"));
+        inputUsername.sendKeys("incorrect");
 
         //4- Enter incorrect password: “incorrect”
         //To auto generate local variable
         //Mac: option + enter
         //Windows: alt + enter
-        WebElement passwordInput = driver.findElement(By.className("login-inp"));
-        passwordInput.sendKeys("incorrect");
+        WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
+        inputPassword.sendKeys("incorrect");
 
         //5- Click to log in button.
-        WebElement signInButton = driver.findElement(By.className("login-btn"));
-        signInButton.click();
+        WebElement loginButton = driver.findElement(By.className("login-btn"));
+        loginButton.click();
+
         //6- Verify error message text is as expected:
         //Expected: Incorrect login or password
+
+        WebElement errorMessage = driver.findElement(By.className("errortext"));
+        String expectedErrorMessage = "Incorrect login or password";
+        String actualErrorMessage = errorMessage.getText();
+
+        if(actualErrorMessage.equals(expectedErrorMessage)){
+            System.out.println("Error message verification PASSED");
+        }else{
+            System.out.println("Error message verification FAILED");
+        }
+
+
+
 
     }
 }
