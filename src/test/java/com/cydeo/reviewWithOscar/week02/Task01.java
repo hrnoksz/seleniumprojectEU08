@@ -44,7 +44,9 @@ public class Task01 {
 
         //click on Retrieve password
         // use id
-        driver.findElement(By.id("form_submit")).click();
+        //driver.findElement(By.id("form_submit")).click();
+        //use cSS
+        driver.findElement(By.cssSelector("#form_submit")).click();
 
         //close or quit the page
         driver.close();
