@@ -42,11 +42,18 @@ public class Task01 {
             System.out.println("expectedEmail = " + expectedEmail);
         }
 
-        //click on Retrieve password
+        // click on Retrieve password
         // use id
-        //driver.findElement(By.id("form_submit")).click();
-        //use cSS
-        driver.findElement(By.cssSelector("#form_submit")).click();
+        // driver.findElement(By.id("form_submit")).click();
+
+        // use CSS
+        //  driver.findElement(By.cssSelector("#form_submit")).click();
+
+        // using tagName locator, since it is the only one : //button
+        //  driver.findElement(By.tagName("//button")).click();
+
+        // use Retrieve word to locate with XPATH : //i[contains(text(),'Retrieve')]
+        driver.findElement(By.xpath("//i[contains(text(),'Retrieve')]")).click();
 
         //verify that confirmation message says 'Your e-mail's been sent!'
         String expectedMessage = "Your e-mail's been sent!";
