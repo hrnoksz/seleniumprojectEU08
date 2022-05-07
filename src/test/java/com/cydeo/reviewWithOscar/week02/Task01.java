@@ -48,9 +48,16 @@ public class Task01 {
         //use cSS
         driver.findElement(By.cssSelector("#form_submit")).click();
 
+        //verify that confirmation message says 'Your e-mail's been sent!'
+        String expectedMessage = "Your e-mail's been sent!";
+        String actualMessage = driver.findElement(By.name("confirmation_message")).getText();
+        if(actualMessage.equals(expectedMessage)){
+            System.out.println("Message test verification passed");
+        }else{
+            System.out.println("Message test verification failed");
+        }
+
         //close or quit the page
         driver.close();
-
-        //verify that confirmation message says 'Your e-mail's been sent!'
     }
 }
