@@ -5,7 +5,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Task3 {
+public class Task03 {
 
     public static void main(String[] args) {
 
