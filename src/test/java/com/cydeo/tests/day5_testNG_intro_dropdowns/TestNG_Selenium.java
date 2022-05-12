@@ -2,6 +2,7 @@ package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -24,6 +25,9 @@ public class TestNG_Selenium {
         driver.get("https://www.google.com");
 
         //Assert: title is "Google"
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "Google";
+        Assert.assertEquals(actualTitle, expectedTitle);
 
 
 
