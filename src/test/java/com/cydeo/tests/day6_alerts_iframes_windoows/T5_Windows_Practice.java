@@ -45,6 +45,8 @@ public class T5_Windows_Practice {
 
         //6. Switch to new Window.
         //Set<String> allWindowHandles = driver.getWindowHandles();
+        //window handle 1 - main window
+        //window handle 2 - 2nd window
 
         for(String each : driver.getWindowHandles()){
            driver.switchTo().window(each);
