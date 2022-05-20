@@ -31,11 +31,11 @@ public class CRM_Utilities {
 
         //3. Enter valid username
         WebElement usernameInput = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        usernameInput.sendKeys("helpdesk1@cybertekschool.com");
+        usernameInput.sendKeys(username);
 
         //4. Enter valid password
         WebElement passwordInput = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        passwordInput.sendKeys("UserUser");
+        passwordInput.sendKeys(password);
 
         //5. Click to `Log In` button
         WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
