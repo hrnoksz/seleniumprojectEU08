@@ -46,6 +46,59 @@ public class T1_Alert_Practices {
         String actualText = resultText.getText();
         Assert.assertEquals(actualText, expectedText, "Actual result test is not as expected!!!!");
     }
+    @Test
+    public void alert_test2(){
+        //3. Click to “Click for JS Confirm” button
+        WebElement confirmAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+        confirmAlertButton.click();
+
+        //To be able to click to Confirm OK button, we need to switch driver's focus to Alert itself
+        Alert alert = driver.switchTo().alert();
+        // 4. Click to OK button from the Alert
+        alert.accept();
+
+        //5. Verify “You clicked: Ok” text is displayed.
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        Assert.assertTrue(resultText.isDisplayed(),"Result text is NOT displayed");
+
+        String expectedText = "You clicked: Ok";
+        String actualText = resultText.getText();
+        Assert.assertEquals(actualText,expectedText, "Actual result test is not as expected!!!");
+    }
+    @Test
+    public void alert_test3(){
+        //3. Click to “Click for JS Prompt” button
+        WebElement promptAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        promptAlertButton.click();
+
+        //To be able to click to Confirm OK button, we need to switch driver's focus to Alert itself
+        Alert alert = driver.switchTo().alert();
+
+        // 4. Click to OK button from the Alert
+        alert.sendKeys("hello");
+        alert.accept();
+
+        //6. Verify “You entered: hello” text is displayed.
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        Assert.assertTrue(resultText.isDisplayed(), "Result text is not displayed");
+    }
 
 
 }
+/*
+TC #2: Confirmation alert practice
+1. Open browser
+2. Go to website: http://practice.cydeo.com/javascript_alerts
+3. Click to “Click for JS Confirm” button
+4. Click to OK button from the alert
+5. Verify “You clicked: Ok” text is displayed.
+ */
+/*
+TC #3: Information alert practice
+1. Open browser
+2. Go to website: http://practice.cydeo.com/javascript_alerts
+3. Click to “Click for JS Prompt” button
+4. Send “hello” text to alert
+5. Click to OK button from the alert
+6. Verify “You entered: hello” text is displayed.
+ */
