@@ -45,10 +45,10 @@ public class T1_WindowHandling {
         }
 
         //5. Assert: Title contains “Etsy”
-        String expectedInTitle = "Etsy Turkey - Shop for handmade, vintage, custom, and unique gifts for everyone";
+        String expectedInTitle = "Etsy";
         String actualTitle = driver.getTitle();
 
-        Assert.assertEquals(actualTitle, expectedInTitle);
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
 
 
