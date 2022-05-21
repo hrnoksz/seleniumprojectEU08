@@ -1,6 +1,6 @@
 package com.cydeo.reviewWithOscar.week02;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.ReviewUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,13 +23,13 @@ public class Task03 {
 
         driver.findElement(By.partialLinkText("Laptops")).click();
 
-        HandleWait.staticWait(1);
+        ReviewUtils.staticWait(1);
 
         driver.findElement(By.partialLinkText("Sony vaio i5")).click();
 
         int expectedPrice = 790;
 
-        HandleWait.staticWait(1);
+        ReviewUtils.staticWait(1);
 
         //System.out.println("driver.findElement(By.tagName(\"h3\")).getText() = "
                // + driver.findElement(By.tagName("h3")).getText()); $790* includes tax

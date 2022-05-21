@@ -1,6 +1,6 @@
 package com.cydeo.reviewWithOscar.week02;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.ReviewUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,12 +19,12 @@ public class Task01 {
 
         //then click on "forgot_password" link
         // 2 ways of using web elements: long way or lazy way
-        HandleWait.staticWait(1); //we are using Thread.sleep in a cleaner syntax
+        ReviewUtils.staticWait(1); //we are using Thread.sleep in a cleaner syntax
         WebElement forgotPasswordLink = driver.findElement(By.linkText("Forgot Password"));
         forgotPasswordLink.click();
 
         //enter any email
-        HandleWait.staticWait(1);
+        ReviewUtils.staticWait(1);
         WebElement emailBox = driver.findElement(By.name("email"));
         String expectedEmail = "mike.smith@garbage.com";
         emailBox.sendKeys(expectedEmail);
