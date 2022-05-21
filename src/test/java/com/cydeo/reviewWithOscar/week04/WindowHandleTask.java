@@ -48,7 +48,8 @@ Scenario 1)
             }
         }
         // click on the element at the second window
-        driver.findElement(By.linkText("24")).click(); // the window closes itself, however I am still inside that closed window programatically
+        driver.findElement(By.linkText("24")).click(); // the window closes itself,
+        // however, I am still inside that closed window programmatically
         ReviewUtils.staticWait(3);
         driver.switchTo().window(mainWindowHandle);
 
