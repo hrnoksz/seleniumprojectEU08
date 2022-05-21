@@ -30,7 +30,7 @@ Scenario 1)
         driver.manage().window().maximize();
 
         driver.get("https://shino.de/parkcalc/");
-// click on first calendar
+        // click on first calendar
         driver.findElement(By.xpath("(//img[@src='cal.gif'])[1]")).click();
 
         // get all the opened windows handles
