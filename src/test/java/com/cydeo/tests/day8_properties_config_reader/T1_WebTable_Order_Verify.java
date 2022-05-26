@@ -45,6 +45,13 @@ public class T1_WebTable_Order_Verify {
         Assert.assertEquals(actualDate, expectedDate);
 
     }
+    //We use the utility method we created.
+    @Test
+    public void test2(){
+
+
+
+    }
 
 
 
