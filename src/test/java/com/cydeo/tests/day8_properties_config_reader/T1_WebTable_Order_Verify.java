@@ -57,7 +57,7 @@ public class T1_WebTable_Order_Verify {
         System.out.println("costumerOrderDate2 = " + costumerOrderDate2);
 
     }
-    //Using the utility method
+    //Using WebTableUtils.orderVerify() method
     @Test
     public void test3(){
         WebTableUtils.orderVerify(driver, "Bart Fisher", "01/16/2021");
