@@ -11,6 +11,10 @@ public class JavaFakerPractice {
         //JavaFaker is used to generate RANDOM data
         //Creating faker object to reach methods
         Faker faker = new Faker();
+
+        //Faker faker = new Faker(new Locale("tr"));
+        //Farklı dillerde generate edilebiliyor.
+
         System.out.println("faker.name().firstName() = " + faker.name().firstName());
         System.out.println("faker.name().lastName() = " + faker.name().lastName());
         System.out.println("faker.name().fullName() = " + faker.name().fullName());
@@ -38,7 +42,6 @@ public class JavaFakerPractice {
         //5019-6102-0286-2094
 
         System.out.println("faker.chuckNorris().fact() = " + faker.chuckNorris().fact());
-
 
     }
 }
