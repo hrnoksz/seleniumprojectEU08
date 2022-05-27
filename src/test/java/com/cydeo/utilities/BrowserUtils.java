@@ -49,7 +49,7 @@ public class BrowserUtils {
         Assert.assertTrue(actualTitle.contains( expectedInTitle));
     }
     /*
-    This method accept a String "expectedTitle" and Asserts if it is true
+    This method accept a String "expectedTitle" and asserts if it is true
      */
     public static void verifyTitle(WebDriver driver, String expectedTitle){
 
