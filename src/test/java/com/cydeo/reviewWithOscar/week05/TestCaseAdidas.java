@@ -13,13 +13,21 @@ public class TestCaseAdidas extends TestBase {
     public void Test(){
         double expectedPrice = 0;
         driver.get("https://www.demoblaze.com/index.html");
-// ConfigurationReader.getProperty("category1") ----> returns Laptops
+        // ConfigurationReader.getProperty("category1") ----> returns Laptops
+        // add sony vaio i5
         expectedPrice += ReviewUtils.addProduct(driver, ConfigurationReader.getProperty("category1"),"Sony vaio i5");
         ReviewUtils.getLink(driver,"Home");
+
+       // add samsung galaxy s6
         expectedPrice += ReviewUtils.addProduct(driver,ConfigurationReader.getProperty("category2"),"Samsung galaxy s6");
+
         // go to Cart
         ReviewUtils.getLink(driver,"Cart");
-        ReviewUtils.staticWait(1); // PUT one second waiting time
+        ReviewUtils.staticWait(3); // PUT one second waiting time
+
+        // delete samsung galaxy s6
+        expectedPrice -= ReviewUtils.removeProduct("Samsung galaxy s6");
+
         // First get Cart price then click on place order
         double cartPrice = Double.parseDouble(driver.findElement(By.id("totalp")).getText());
         System.out.println("cartPrice = " + cartPrice);
