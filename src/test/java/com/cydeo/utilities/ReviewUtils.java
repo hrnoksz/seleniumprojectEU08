@@ -23,6 +23,10 @@ public class ReviewUtils {
         driver.findElement(By.partialLinkText(link)).click();
         staticWait(1);
     }
+    public static void getLink(String link){
+        Driver.getDriver().findElement(By.partialLinkText(link)).click();
+        staticWait(1);
+    }
 
     public static double addProduct(WebDriver driver, String category, String product){
         getLink(driver, category); // click on category
