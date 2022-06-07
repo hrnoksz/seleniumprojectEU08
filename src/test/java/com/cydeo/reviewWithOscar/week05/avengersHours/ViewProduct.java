@@ -37,6 +37,19 @@ public class ViewProduct extends TestBaseForAvengers{
         int actualValue = Integer.parseInt(quantityBox.getAttribute("value"));
         Assert.assertEquals(actualValue,expectedValue);
 
+        //Click 'Add to cart' button
+        WebElement addToCartButton = Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-default cart']"));
+        addToCartButton.click();
+
+        //Click 'View Cart' button
+        WebElement viewCartButton = Driver.getDriver().findElement(By.xpath("//p[@class='text-center']//a"));
+        viewCartButton.click();
+
+        //Verify that product is displayed in cart page with exact quantity
+        WebElement quantityButton = Driver.getDriver().findElement(By.xpath("//button[@class='disabled']"));
+        int actual = Integer.parseInt(quantityButton.getText());
+        Assert.assertEquals(actual, expectedValue);
+
 
 
     }
