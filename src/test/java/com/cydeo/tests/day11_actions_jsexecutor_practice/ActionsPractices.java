@@ -38,5 +38,18 @@ public class ActionsPractices {
     @Test
     public void test2(){
         Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void test3(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void test4(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
     }
 }
