@@ -20,8 +20,11 @@ public class T1_DoubleClick {
 
         //3. Double-click on the text “Double-click me to change my text color.”
         DoubleClickPage doubleClickPage = new DoubleClickPage();
-        Actions actions = new Actions(Driver.getDriver());
 
+        Actions actions = new Actions(Driver.getDriver()); //double-click is possible with Actions class
+                                                           //Therefore, we need to create an object from this class
+
+        //doubleClickPage.textToDoubleClick returns web element
         actions.doubleClick(doubleClickPage.textToDoubleClick).perform();
 
         //4. Assert: Text’s “style” attribute value contains “red”.
