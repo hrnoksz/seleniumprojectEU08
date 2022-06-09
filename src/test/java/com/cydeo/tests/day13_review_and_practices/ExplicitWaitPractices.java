@@ -31,7 +31,7 @@ public class ExplicitWaitPractices {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);//explicit way
         wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
          */
-        //Since we create waitForInvisibilityOf() method within BrowserUtils, we can use this method
+        //Since we create waitForInvisibilityOf() method within BrowserUtils class, we can use this method
         //instead of three lines of codes above(between line 30 and 32)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
 
@@ -46,9 +46,32 @@ public class ExplicitWaitPractices {
         }
 
         //b. “It’s gone!” message is displayed.
+        //We can use this one
         Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
+        //or this one
         Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's gone!"));
     }
+
+    @Test
+    public void enable_button_test(){
+        //3- Click to “Enable” button
+        dynamicControlsPage.enableButton.click();
+
+        //4- Wait until “loading bar disappears”
+        //Calling our ExplicitWait utility method(within BrowserUtils class) to wait loading-bar to disappear
+        BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
+
+        //5- Verify:
+        //a. Input box is enabled.
+        Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
+
+        //b. “It’s enabled!” message is displayed.
+        Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
+
+        //Check the String value is matching as expected: “It’s enabled!”
+        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's enabled!"));
+    }
+
 }
 /*
 TC #3: Explicit wait practice
