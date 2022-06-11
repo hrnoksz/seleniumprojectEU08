@@ -1,8 +1,12 @@
 package com.cydeo.reviewWithOscar.week06.pomForReview;
 
 import com.cydeo.utilities.Driver;
+import com.cydeo.utilities.ReviewUtils;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,7 +24,30 @@ public class Task06 {
         //    3. Click on 'Contact Us' button
         page.getElement("Contact us").click();
 
-        //    4. Enter name, email, subject and message
+        //for scrolling test cases
+        // create actions object
+        // first way
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+        ReviewUtils.staticWait(2);
+        actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();
+        ReviewUtils.staticWait(2);
+
+        // second way
+        actions.moveToElement(page.submit).perform();
+
+        // third way
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("window.scrollBy(0, 750)");
+        ReviewUtils.staticWait(1);
+        jse.executeScript("window.scrollBy(0, -750)");
+        ReviewUtils.staticWait(1);
+
+        // last way
+        jse.executeScript("arguments[0].scrollIntoView(true)",page.submit);
+        ReviewUtils.staticWait(2);
+
+        // 4. Enter name, email, subject and message
         Faker faker = new Faker();
         page.name.sendKeys(faker.name().fullName());
         page.email.sendKeys(faker.internet().emailAddress());
