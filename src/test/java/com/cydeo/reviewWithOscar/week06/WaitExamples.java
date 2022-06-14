@@ -64,8 +64,6 @@ public class WaitExamples {
 -> Explicit wait throws TimeOutException if condition is not met within the specified seconds
     */
 
-
-
     //Task1:
     //    1. Go to https://chercher.tech/practice/explicit-wait-sample-selenium-webdriver
     //    2. Click on "Click me, to Open an alert after 5 seconds"
