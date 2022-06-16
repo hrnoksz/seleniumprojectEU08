@@ -66,6 +66,7 @@ public class TestAdidasPOM {
         page.getLink("Laptops");
         page.getLink("Sony vaio i7");
 
+
         double expectedPrice = 790.0;
 
         double actualPrice = page.productPrice();
