@@ -56,16 +56,3 @@ public class JavaScriptAlerts {
 
         }
 }
-/*
- Scenario: Add fields
-    When user clicks filter and search box
-    And user clicks "add field" button
-    And user clicks favorites option
-    Then user should see favorites title on the page
-
-  Scenario: Remove fields
-    When user clicks filter and search box
-    And user clicks add field button
-    And user clicks Author option
-    Then user should not see "Author title" on the page
- */
