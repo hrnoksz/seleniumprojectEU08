@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ActionClassPractice {
+public class ActionClassPractice_HoverOver {
 
     @BeforeMethod
     public void setup(){
